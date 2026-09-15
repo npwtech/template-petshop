@@ -40,6 +40,9 @@ export class HeroScene {
       uMouse: { value: new THREE.Vector2(0.5, 0.5) },
       uTime: { value: 0 },
       uHoverStrength: { value: 0 },
+      // 0 = mostra o topo da imagem, 1 = mostra a base. Ajuste aqui para
+      // reenquadrar o hero verticalmente (igual ao object-position do CSS).
+      uFocusY: { value: 0.4 },
     };
 
     const geometry = new THREE.PlaneGeometry(2, 2);

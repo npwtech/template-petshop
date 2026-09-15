@@ -15,6 +15,7 @@ export const fragmentShader = /* glsl */ `
   uniform vec2 uMouse;
   uniform float uTime;
   uniform float uHoverStrength;
+  uniform float uFocusY;
 
   varying vec2 vUv;
 
@@ -23,19 +24,21 @@ export const fragmentShader = /* glsl */ `
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
   }
 
-  // ajusta UV para comportamento tipo "background-size: cover"
-  vec2 coverUv(vec2 uv, vec2 res, vec2 imgRes) {
+  // ajusta UV para comportamento tipo "background-size: cover", com
+  // ponto focal vertical ajustável (0 = topo da imagem, 1 = base),
+  // equivalente ao "object-position" do CSS.
+  vec2 coverUv(vec2 uv, vec2 res, vec2 imgRes, float focusY) {
     float resRatio = res.x / res.y;
     float imgRatio = imgRes.x / imgRes.y;
     vec2 scale = resRatio > imgRatio
       ? vec2(1.0, imgRatio / resRatio)
       : vec2(resRatio / imgRatio, 1.0);
-    vec2 offset = (1.0 - scale) * 0.5;
+    vec2 offset = vec2((1.0 - scale.x) * 0.5, (1.0 - scale.y) * (1.0 - focusY));
     return uv * scale + offset;
   }
 
   void main() {
-    vec2 uv = coverUv(vUv, uResolution, uImageResolution);
+    vec2 uv = coverUv(vUv, uResolution, uImageResolution, uFocusY);
 
     // deriva lenta e contínua (a imagem "respira" mesmo sem interação)
     vec2 drift = vec2(
