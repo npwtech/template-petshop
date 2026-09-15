@@ -26,7 +26,11 @@
     color: var(--color-text-dim);
     padding: 0.3rem 0;
   }
-  .mobile-nav__item span {
-    font-size: 1.05rem;
+  .mobile-nav__icon {
+    display: flex;
+  }
+  .mobile-nav__icon svg {
+    width: 20px;
+    height: 20px;
   }
 }

@@ -11,8 +11,8 @@ export const brand = {
   whatsapp: 'https://wa.me/5500000000000',
   phone: '(00) 00000-0000',
   instagram: '@seupetshop',
-  address: 'Rua das Acácias, 482 — Jardim das Flores',
-  city: 'Sua Cidade — UF',
+  address: 'Rua Amazonas, 540 — Setor Oeste',
+  city: 'Goiânia — GO',
   hours: [
     ['Seg – Sex', '09h às 19h'],
     ['Sábado', '09h às 17h'],
@@ -169,13 +169,13 @@ export const gallery = [
     alt: 'Cachorro feliz depois da tosa',
   },
   {
+    src: 'https://images.unsplash.com/photo-1692906456160-385d805be646?auto=format&fit=crop&w=700&q=80',
+    alt: 'Equipe cuidando da alimentação dos pets',
+  },
+  {
     src: 'https://images.unsplash.com/photo-1601758003122-53c40e686a19?auto=format&fit=crop&w=900&q=80',
     alt: 'Carinho no dia a dia com os pets',
     big: true,
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1692906456160-385d805be646?auto=format&fit=crop&w=700&q=80',
-    alt: 'Equipe cuidando da alimentação dos pets',
   },
 ];
 
