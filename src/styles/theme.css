@@ -1,0 +1,98 @@
+/*
+  ============================================================
+  TEMA — troque só este arquivo para re-pintar o site inteiro.
+  Nenhum outro CSS usa cor "solta": tudo referencia estas
+  variáveis, então mudar a paleta aqui é o suficiente.
+  ============================================================
+*/
+
+:root {
+  /* ---- Paleta base (Seu Petshop / claro) ---- */
+  --color-bg: #faf6ee;           /* fundo principal, marfim claro */
+  --color-bg-alt: #f1ead9;       /* fundo alternado das seções */
+  --color-surface: #ffffff;      /* cards, superfícies elevadas */
+  --color-surface-2: #ede4d0;    /* hover de superfícies */
+
+  --color-text: #23201a;         /* texto principal (tinta) */
+  --color-text-dim: #5c5546;     /* texto secundário */
+  --color-text-faint: #8f8674;   /* texto terciário / legendas */
+
+  --color-accent: #7c9257;       /* verde-musgo — natureza / cuidado */
+  --color-accent-strong: #4f6130;
+  --color-accent-2: #b9722f;     /* âmbar quente — CTA / calor */
+  --color-accent-2-strong: #8f5220;
+
+  --color-line: rgba(35, 32, 26, 0.12);
+  --color-line-strong: rgba(35, 32, 26, 0.24);
+
+  --color-overlay: rgba(20, 17, 12, 0.55);
+
+  /* ---- Tokens fixos "sobre foto" ----
+     Usados só onde o texto fica sobre uma imagem com véu escuro
+     (Hero, cards de Serviços, tag de Produto, nav transparente no topo).
+     Não mudam com o tema, porque a foto por baixo continua escura. */
+  --color-on-media: #f7f2e6;
+  --color-on-media-dim: rgba(247, 242, 230, 0.82);
+  --color-on-media-faint: rgba(247, 242, 230, 0.62);
+  --color-line-on-media: rgba(247, 242, 230, 0.35);
+  --color-accent-on-media: #c3d39a;
+
+  /* Texto/ícone sobre um preenchimento sólido de cor de destaque (ex: botão do WhatsApp) */
+  --color-on-accent: #fbf8f2;
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Fraunces', 'Iowan Old Style', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+
+  /* ---- Escala tipográfica ---- */
+  --fs-display-xl: clamp(3.2rem, 8vw, 8.5rem);
+  --fs-display-lg: clamp(2.4rem, 5.4vw, 5rem);
+  --fs-display-md: clamp(1.9rem, 3.6vw, 3.1rem);
+  --fs-display-sm: clamp(1.4rem, 2.4vw, 2rem);
+  --fs-body-lg: clamp(1.05rem, 1.4vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.85rem;
+  --fs-micro: 0.72rem;
+
+  /* ---- Espaçamento / layout ---- */
+  --section-pad-y: clamp(4.5rem, 10vw, 9rem);
+  --section-pad-x: clamp(1.4rem, 5vw, 4.5rem);
+  --max-width: 1400px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --header-h: 84px;
+}
+
+/* Alternativas de paleta prontas — troque a classe no <body> em main.jsx
+   para pré-visualizar (ex: className="theme-clay" ou "theme-sea").      */
+
+body.theme-clay {
+  --color-bg: #171310;
+  --color-bg-alt: #1e1812;
+  --color-surface: #26201a;
+  --color-surface-2: #302921;
+  --color-accent: #c9723f;
+  --color-accent-strong: #e08c58;
+  --color-accent-2: #8a9a5b;
+  --color-accent-2-strong: #a6b878;
+}
+
+body.theme-sea {
+  --color-bg: #0f1513;
+  --color-bg-alt: #141b19;
+  --color-surface: #1a2320;
+  --color-surface-2: #212c28;
+  --color-accent: #6fa39a;
+  --color-accent-strong: #8fc0b7;
+  --color-accent-2: #d9a15a;
+  --color-accent-2-strong: #eab97c;
+}

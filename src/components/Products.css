@@ -1,0 +1,102 @@
+.products {
+  position: relative;
+  padding-top: var(--section-pad-y);
+  background: var(--color-bg-alt);
+}
+
+.products__viewport {
+  overflow: hidden;
+  padding-bottom: var(--section-pad-y);
+}
+
+.products__track {
+  display: flex;
+  gap: 1.4rem;
+  padding-inline: var(--section-pad-x);
+  width: max-content;
+}
+
+.product-card {
+  width: min(320px, 78vw);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__media {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface);
+}
+.product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.product-card:hover .product-card__media img {
+  transform: scale(1.05);
+}
+
+.product-card__tag {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  background: var(--color-overlay);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: var(--fs-micro);
+  color: var(--color-on-media);
+}
+
+.product-card h3 {
+  margin-top: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.product-card__price {
+  margin-top: 0.35rem;
+  color: var(--color-accent-strong);
+  font-size: var(--fs-small);
+}
+
+.product-card__cta {
+  margin-top: 0.8rem;
+  font-size: var(--fs-small);
+  color: var(--color-text-dim);
+  width: fit-content;
+  border-bottom: 1px solid var(--color-line-strong);
+  padding-bottom: 2px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.product-card__cta:hover {
+  color: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+
+.product-card--end {
+  width: min(280px, 70vw);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.2rem;
+  color: var(--color-text-dim);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 860px) {
+  .products__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-card {
+    scroll-snap-align: start;
+  }
+}
